@@ -5,7 +5,32 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Dashboard Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
-  </div>
+
+  <oj-select-single id="select1"
+    aria-label="Search list of browsers" 
+    value="{{val}}"
+    data="[[browsersDP]]" 
+    style="max-width:20em">
+  </oj-select-single>
+
+  <br>
+
+  <oj-chart 
+    id="barChart"
+    type="[[val]]" 
+    orientation="[[orientationValue]]"
+    stack="[[stackValue]]"
+    data="[[dataProvider]]"
+    animation-on-display="auto"
+    animation-on-data-change="auto"
+    hover-behavior="dim">
+
+    <template slot='itemTemplate' data-oj-as='item'>
+      <oj-chart-item 
+        value='[[item.data.value]]' 
+        group-id='[[ [item.data.group] ]]' 
+        series-id='[[item.data.series]]'> 
+      </oj-chart-item>
+    </template>
+  </oj-chart>
 </div>
