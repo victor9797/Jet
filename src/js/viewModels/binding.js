@@ -8,12 +8,49 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['accUtils'],
- function(accUtils) {
+define(['knockout', 'accUtils', 'ojs/ojarraydataprovider', 'ojs/ojbootstrap', 'ojs/ojmodule-element-utils', 'ojs/ojlogger'],
+ function(ko, accUtils, ArrayDataProvider, Bootstrap, ModuleElementUtils, Logger) {
     function IncidentsViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
+      // Foreach Knockout binding
+      this.people = [
+        { firstName: 'Bert', lastName: 'Bertington' },
+        { firstName: 'Charles', lastName: 'Charlesforth' },
+        { firstName: 'Denise', lastName: 'Dentiste' }
+      ]
+
+      // Foreach Ojet binding
+      
+      var tableViewModel = { people: this.people }; // view model  for the table
+      // load view and update module config
+      var viewPromise = ModuleElementUtils.createView({'viewPath':'views/binding_table.html'});
+      this.moduleConfig = viewPromise.then(
+        function(tableView) {
+          return {'view':tableView,'viewModel':tableViewModel};
+        }.bind(this), 
+        function(error){
+          Logger.error('Error during loading view: ' + error.message);
+          return {'view':[]};
+        }
+      );
+
+      // If knockout
+      this.displayMessage = ko.observable(false)
+
+      // If ojet
+      this.displayMessageOj = ko.observable("off")
+
+      // Text binding knockout
+      this.myMessage = "Hello world!!"
+
+      // Text binding ojet
+      this.myMessageOj = "Hello world from JET!"
+
+  
+      
+  
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being

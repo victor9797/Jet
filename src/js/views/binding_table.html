@@ -1,0 +1,18 @@
+<table>
+    <thead>
+    <tr>
+       <th>First name</th>
+       <th>Last name</th>
+    </tr>
+    </thead>
+    <tbody>
+      <oj-bind-for-each data="[[people]]">
+        <template>
+          <tr>
+              <td><oj-bind-text value="[[$current.data.firstName]]"></oj-bind-text></td>
+              <td><oj-bind-text value="[[$current.data.lastName]]"></oj-bind-text></td>
+          </tr>
+        </template>
+      </oj-bind-for-each>
+    </tbody>
+  </table>

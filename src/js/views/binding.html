@@ -1,0 +1,74 @@
+<!--
+ Copyright (c) 2014, 2021, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Binding Content Area</h1>
+  <hr>
+  <h3>Foreach exercise</h3>
+
+  <br>
+  <h4>Knockout native binding</h4>
+  <table>
+    <thead>
+        <tr><th>First name</th><th>Last name</th></tr>
+    </thead>
+    <tbody data-bind="foreach: people">
+        <tr>
+            <td data-bind="text: firstName"></td>
+            <td data-bind="text: lastName"></td>
+        </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <br>
+  <h4>Ojet binding</h4>
+  <oj-module config="[[moduleConfig]]"></oj-module>
+  <br>
+
+  <hr>
+  <h3>If exercise</h3>
+
+  <br>
+  <h4>Knockout</h4>
+  <label>
+    <input type="checkbox" data-bind="checked: displayMessage" /> Display message
+  </label>
+ 
+  <div data-bind="if: displayMessage">Here is a message. Astonishing.</div>
+  <br>
+
+  <br>
+  <h4>Ojet</h4>
+  <oj-buttonset-one class="oj-buttonset-width-auto" value="{{displayMessageOj}}">
+    <oj-option id="onOption" value="on">On</oj-option>
+    <oj-option id="offOption" value="off">Off</oj-option>
+  </oj-buttonset-one>
+
+  <oj-bind-if test="[[displayMessageOj() === 'on']]">
+    <div>Here is a message. Astonishing.</div>
+  </oj-bind-if>
+  <br>
+
+  <hr>
+  <br>
+  <h3>Text binding exercise</h3>
+
+  <br>
+  <h4>Knockout</h4>
+  <br>
+
+  Today's message is: <span data-bind="text: myMessage"></span>
+  <br>
+
+  <h3>Ojet</h3>
+  <br>
+
+  <oj-button id='button1'>
+    <span><oj-bind-text value="[[myMessageOj]]"></oj-bind-text></span>
+  </oj-button>
+
+
+</div>
