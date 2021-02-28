@@ -31,7 +31,7 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojknocko
         { path: 'cookbook', detail: { label: 'Cookbook', iconClass: 'oj-ux-ico-bar-chart' } },
         { path: 'binding', detail: { label: 'Binding', iconClass: 'oj-ux-ico-fire' } },
         { path: 'rest', detail: { label: 'Rest', iconClass: 'oj-ux-ico-contact-group' } },
-        { path: 'about', detail: { label: 'About', iconClass: 'oj-ux-ico-information-s' } }
+        { path: 'components', detail: { label: 'Components', iconClass: 'oj-ux-ico-information-s' } }
       ];
 
       // Router setup

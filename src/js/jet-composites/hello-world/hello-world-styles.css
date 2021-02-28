@@ -1,0 +1,17 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   hello-world .hello-world-value-text {
+   color: var(--hello-world-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+hello-world:not(.oj-complete){
+  visibility: hidden;
+}
+
+hello-world{
+	min-height: 50px;
+	width: 50px;
+}
