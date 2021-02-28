@@ -17,6 +17,8 @@
 
   }, 
   "slots": {
-
+    "toolbar": {
+      "description": "Toolbar for the chart"
+    }
   }
 }
