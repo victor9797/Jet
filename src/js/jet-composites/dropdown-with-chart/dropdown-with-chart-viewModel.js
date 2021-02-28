@@ -14,7 +14,11 @@ define(
         var self = this;
         
         //At the start of your viewModel constructor
-        self.val = ko.observable('pie');
+        var chart = "pie"
+        if (context.properties.chartType) {
+            chart = context.properties.chartType
+        }
+        self.val = ko.observable(chart);
   
         var browsers = [
           { value: 'pie', label: 'Pie' },

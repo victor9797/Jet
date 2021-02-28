@@ -1,11 +1,28 @@
 /*
  * Your Component ViewModel code goes here
  */
-define(['accUtils', 'hello-world/loader', 'dropdown-with-chart/loader'],
+define(['accUtils', 'hello-world/loader', 'dropdown-with-chart/loader', 'demo-card/loader'],
  function(accUtils) {
     function ComponentViewModel() {
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
+
+      this.employees = [
+        {
+          name: 'Deb Raphaely',
+          avatar: null,
+          title: 'Purchasing Director',
+          work: 5171278899,
+          email: 'deb.raphaely@oracle.com'
+        },
+        {
+          name: 'Adam Fripp',
+          avatar: null,
+          title: 'IT Manager',
+          work: 6501232234,
+          email: 'adam.fripp@oracle.com'
+        }
+      ];
 
       /**
        * Optional ViewModel method invoked after the View is inserted into the
