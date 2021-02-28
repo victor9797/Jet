@@ -1,0 +1,86 @@
+<div class="oj-hybrid-padding">
+  <h3>Rest Api examples using endpoints from <a href="https://www.ryanair.com/us/en" target="_blank">Ryan Air</a></h3>
+
+  <h6>All airports</h6>
+  <oj-table id="table" data="[[datasourceAirports]]" 
+    columns='[
+      {"headerText": "Name",      "field": "Name",      "sortable": "enabled"},
+      {"headerText": "Country",   "field": "Country",   "sortable": "enabled"},
+      {"headerText": "City",      "field": "City",      "sortable": "enabled"},
+      {"headerText": "Code",      "field": "Code",      "sortable": "enabled"},
+      {"headerText": "Latitude",  "field": "Latitude",  "sortable": "enabled"},
+      {"headerText": "Longitude", "field": "Longitude", "sortable": "enabled"}
+    ]'>
+
+    <template data-oj-as='row'>
+      <tr>
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Name]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Country]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.City]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Code]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Latitude]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Longitude]]"></oj-bind-text>
+          </div>
+        </td>
+
+      </tr>
+    </template>
+  </oj-table>
+
+
+
+  <h6>Travel suggestions</h6>
+
+  <oj-table id="table2" data="[[datasourceSuggestions]]" 
+    columns='[
+      {"headerText": "Departure Airport", "field": "Departure", "sortable": "enabled"},
+      {"headerText": "Arrival Airport",   "field": "Arrival",   "sortable": "enabled"}
+    ]'>
+
+    <template data-oj-as='row'>
+      <tr>
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Departure]]"></oj-bind-text>
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <oj-bind-text value="[[row.data.Arrival]]"></oj-bind-text>
+          </div>
+        </td>
+      </tr>
+
+    </template>
+  </oj-table>
+
+
+</div>
